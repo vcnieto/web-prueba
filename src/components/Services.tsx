@@ -317,7 +317,18 @@ const Services = ({ variant = "full" }: ServicesProps) => {
 
                 <div className="space-y-3">
                   {category.groups.map((group, gIdx) => (
-                    <details key={gIdx} className="group border border-border rounded-lg">
+                    <details
+                      key={gIdx}
+                      className="group border border-border rounded-lg"
+                      onToggle={(e) => {
+                        const el = e.currentTarget as HTMLDetailsElement;
+                        if (el.open) {
+                          document.querySelectorAll('details[open]').forEach((d) => {
+                            if (d !== el) (d as HTMLDetailsElement).open = false;
+                          });
+                        }
+                      }}
+                    >
                       <summary className="cursor-pointer list-none px-4 py-3 flex items-center justify-between gap-3">
                         <span className="font-semibold text-foreground">{group.title}</span>
                         <span className="transition-smooth group-open:rotate-180 text-muted-foreground">⌄</span>
