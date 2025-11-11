@@ -50,11 +50,11 @@ const Header = () => {
               className="transition-smooth hover-pop"
               aria-label="Ir al inicio"
             >
-              <img src={logo} alt="Belaôs Beauty Salon" className="h-10 w-auto" />
+              <img src={logo} alt="Belaôs Beauty Salon" className="h-12 md:h-14 w-auto" />
             </button>
           ) : (
             <NavLink to="/" className="transition-smooth hover-pop" aria-label="Ir al inicio">
-              <img src={logo} alt="Belaôs Beauty Salon" className="h-10 w-auto" />
+              <img src={logo} alt="Belaôs Beauty Salon" className="h-12 md:h-14 w-auto" />
             </NavLink>
           )}
 
