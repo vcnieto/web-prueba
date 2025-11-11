@@ -2,7 +2,7 @@ import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const WhatsAppButton = () => {
-  const phoneNumber = "34912345678"; // Replace with actual WhatsApp business number
+  const phoneNumber = "34699133105"; // Número WhatsApp con prefijo de España (+34)
   const message = "Hola! Me gustaría reservar una cita en Belaos Beauty Salon.";
 
   const handleClick = () => {

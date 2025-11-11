@@ -42,12 +42,12 @@ const Contact = () => {
     {
       icon: <MapPin className="w-5 h-5" />,
       title: "Dirección",
-      content: "Calle Principal 123, Madrid, 28001",
+      content: "Carrer de Ramiro de Maeztu, 9, Camins al Grau, 46022 València, Valencia",
     },
     {
       icon: <Phone className="w-5 h-5" />,
       title: "Teléfono",
-      content: "+34 912 345 678",
+      content: "699 13 31 05",
     },
     {
       icon: <Mail className="w-5 h-5" />,
@@ -57,7 +57,7 @@ const Contact = () => {
     {
       icon: <Clock className="w-5 h-5" />,
       title: "Horario",
-      content: "Lun-Vie: 10:00-20:00 | Sáb: 10:00-18:00",
+      content: "Lun: Cerrado | Mar-Vie: 9:30–19:30 | Sáb: 9:30–13:30 | Dom: Cerrado",
     },
   ];
 
@@ -77,7 +77,7 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-6">
             {contactInfo.map((info, idx) => (
-              <Card key={idx} className="border-none shadow-md">
+              <Card key={idx} className="border-none shadow-md transition-smooth hover:shadow-lg hover:-translate-y-1">
                 <CardContent className="p-6 flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
                     {info.icon}
@@ -91,9 +91,9 @@ const Contact = () => {
             ))}
 
             {/* Map Placeholder */}
-            <div className="rounded-lg overflow-hidden h-64 bg-muted">
+            <div className="rounded-lg overflow-hidden h-64 bg-muted group">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.4487158568586!2d-3.7037902!3d40.4167754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42287f0f7ffffd%3A0x5a7e0d7e8e8e8e8e!2sMadrid%2C%20Spain!5e0!3m2!1sen!2sus!4v1234567890"
+                src="https://www.google.com/maps?q=Carrer%20de%20Ramiro%20de%20Maeztu%2C%209%2C%2046022%20Val%C3%A8ncia%2C%20Valencia&hl=es&z=16&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -105,7 +105,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="border-none shadow-lg">
+          <Card className="border-none shadow-lg transition-smooth hover:shadow-xl hover:-translate-y-1">
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>

@@ -1,15 +1,19 @@
-import galleryHair from "@/assets/gallery-hair.jpg";
-import galleryNails from "@/assets/gallery-nails.jpg";
-import galleryFacial from "@/assets/gallery-facial.jpg";
-import galleryMassage from "@/assets/gallery-massage.jpg";
+import foto1 from "@/assets/foto_1.png";
+import foto2 from "@/assets/foto_2.png";
+import foto3 from "@/assets/foto_3.png";
+import foto4 from "@/assets/foto_4.jpg";
+import foto5 from "@/assets/foto_5.jpg";
 
 const Gallery = () => {
   const images = [
-    { src: galleryHair, alt: "Tratamiento de peluquería profesional" },
-    { src: galleryNails, alt: "Servicio de manicura elegante" },
-    { src: galleryFacial, alt: "Tratamiento facial relajante" },
-    { src: galleryMassage, alt: "Masaje terapéutico" },
+    { src: foto1, alt: "Color y mechas profesionales" },
+    { src: foto2, alt: "Manicura y cuidado de uñas" },
+    { src: foto3, alt: "Tratamientos faciales y bienestar" },
+    { src: foto4, alt: "Masaje y relax corporal" },
+    { src: foto5, alt: "Resultados reales en el salón" },
   ];
+
+  const loopImages = [...images, ...images];
 
   return (
     <section id="galeria" className="py-24 bg-background">
@@ -23,25 +27,21 @@ const Gallery = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {images.map((image, idx) => (
-            <div
-              key={idx}
-              className="group relative overflow-hidden rounded-lg aspect-square cursor-pointer"
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4 right-4 text-background">
-                  <p className="text-sm font-medium">{image.alt}</p>
+        <div className="overflow-hidden">
+          <div className="flex animate-marquee will-change-transform">
+            {loopImages.map((image, idx) => (
+              <div key={idx} className="flex-shrink-0 px-2 md:px-3 w-full sm:w-1/2 md:w-1/4 box-border">
+                <div className="group relative overflow-hidden rounded-lg aspect-square cursor-pointer transform scale-95 md:scale-90">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                  />
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
