@@ -13,7 +13,7 @@ const Gallery = () => {
     { src: foto5, alt: "Resultados reales en el salón" },
   ];
 
-  const loopImages = [...images, ...images, ...images];
+  const loopImages = [...images, ...images];
 
   return (
     <section id="galeria" className="py-24 bg-background">
