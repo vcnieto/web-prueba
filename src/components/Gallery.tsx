@@ -30,8 +30,8 @@ const Gallery = () => {
         <div className="overflow-hidden">
           <div className="flex animate-marquee will-change-transform">
             {loopImages.map((image, idx) => (
-              <div key={idx} className="flex-shrink-0 px-2 md:px-3 w-full sm:w-1/2 md:w-1/4 box-border">
-                <div className="group relative overflow-hidden rounded-lg aspect-square cursor-pointer transform scale-95 md:scale-90">
+              <div key={idx} className="flex-shrink-0 w-full sm:w-1/2 md:w-1/4 box-border">
+                <div className="group relative overflow-hidden rounded-lg aspect-square cursor-pointer transform scale-95 md:scale-90 px-2 md:px-3">
                   <img
                     src={image.src}
                     alt={image.alt}
