@@ -273,10 +273,21 @@ const Services = ({ variant = "full" }: ServicesProps) => {
     <section id="servicios" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 intro">
-          <h2 className="heading-2 text-foreground mb-3">Nuestros Servicios</h2>
-          <p className="body-text text-muted-foreground max-w-2xl mx-auto">
-            Explora nuestro catálogo completo por categorías
-          </p>
+          {variant === "full" ? (
+            <>
+              <h2 className="heading-2 text-foreground mb-3">Nuestros Servicios</h2>
+              <p className="body-text text-muted-foreground max-w-2xl mx-auto">
+                Explora nuestro catálogo completo por categorías
+              </p>
+            </>
+          ) : (
+            <>
+              <h2 className="heading-2 text-foreground mb-3">Nuestros Servicios Más Destacados</h2>
+              <p className="body-text text-muted-foreground max-w-2xl mx-auto">
+                Explora nuestro catálogo completo por categorías y descubre los tratamientos favoritos de nuestras clientas
+              </p>
+            </>
+          )}
         </div>
 
         {variant === "full" && (

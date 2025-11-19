@@ -13,6 +13,13 @@
   will-change: transform;
 }
 
+/* En móviles, acelera ligeramente el carrusel para que se perciba más dinámico */
+@media (max-width: 768px) {
+  .animate-marquee {
+    animation-duration: 6s;
+  }
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */

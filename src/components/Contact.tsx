@@ -5,6 +5,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "emailjs-com";
+
+const EMAILJS_SERVICE_ID = "service_vzlhwc2";
+const EMAILJS_TEMPLATE_ID_USER = "template_lyf12v8";
+const EMAILJS_TEMPLATE_ID_OWNER = "template_qci1sn3";
+const EMAILJS_PUBLIC_KEY = "Q0DvMNcn6eYsLL43h";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -15,10 +21,10 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Basic validation
+
+    // Validación básica
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Error",
@@ -28,14 +34,50 @@ const Contact = () => {
       return;
     }
 
-    // Here you would typically send the form data to a backend
-    toast({
-      title: "¡Mensaje enviado!",
-      description: "Nos pondremos en contacto contigo pronto.",
-    });
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      phone: formData.phone || "-",
+      message: formData.message,
+      to_name: "Belaôs Beauty Salon",
+      user_email: formData.email,
+      owner_email: "info@belaosbeauty.com",
+    };
 
-    // Reset form
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    try {
+      // Email de confirmación al usuario
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID_USER,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+
+      // Email de aviso para el propietario
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID_OWNER,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+
+      toast({
+        title: "¡Mensaje enviado!",
+        description:
+          "Te hemos enviado un email de confirmación y nos pondremos en contacto contigo pronto.",
+      });
+
+      // Reset form
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      console.error("Error enviando el formulario de contacto", error);
+      toast({
+        title: "Error",
+        description:
+          "Hubo un problema al enviar el mensaje. Inténtalo de nuevo en unos minutos.",
+        variant: "destructive",
+      });
+    }
   };
 
   const contactInfo = [
