@@ -20,7 +20,10 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden intro">
+    <section
+      id="hero"
+      className="relative min-h-screen pt-24 md:pt-28 flex items-center justify-center overflow-hidden intro"
+    >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <video
@@ -75,11 +78,11 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative mt-8 md:mt-0">
             <img
               src={mainPhoto}
               alt="Belaos Beauty Salon - imagen principal"
-              className="w-full max-w-lg lg:max-w-xl mx-auto md:mx-0 rounded-2xl shadow-xl border border-white/10 reveal"
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl mx-auto md:mx-0 rounded-2xl shadow-xl border border-white/10 reveal"
               loading="eager"
             />
           </div>

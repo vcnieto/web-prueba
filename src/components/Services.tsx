@@ -35,210 +35,303 @@ interface ServicesProps {
 const Services = ({ variant = "full" }: ServicesProps) => {
   const catalog: Category[] = [
     {
-      title: "Pelo",
+      title: "Manicuras",
+      icon: <Sparkles className="w-6 h-6" />,
+      groups: [
+        {
+          title: "Manicuras",
+          items: [
+            { name: "Manicura masculina", duration: "", price: "23 €" },
+            { name: "Manicura rusa sin esmalte", duration: "", price: "20 €" },
+            { name: "Manicura rusa con esmaltado tradicional", duration: "", price: "23 €" },
+            { name: "Esmaltado semi + capa de refuerzo", duration: "", price: "27 €" },
+            { name: "Puesta nueva uñas esculpidas", duration: "", price: "Desde 50 €" },
+            { name: "Relleno uñas esculpidas", duration: "", price: "33 €" },
+            { name: "Tratamiento parafina manos", duration: "", price: "10 €" },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Pedicuras",
+      icon: <Sparkles className="w-6 h-6" />,
+      groups: [
+        {
+          title: "Pedicuras",
+          items: [
+            { name: "Esmaltado semi", duration: "", price: "25 €" },
+            { name: "Esmaltado tradicional", duration: "", price: "20 €" },
+            { name: "Pedicura spa sin esmaltado", duration: "", price: "35 €" },
+            { name: "Pedicura spa tradicional", duration: "", price: "28 €" },
+            { name: "Pedicura spa masculina", duration: "", price: "28 €" },
+            { name: "Pedicura spa con esmaltado semi", duration: "", price: "35 €" },
+            { name: "Pedicura jelly spa con esmaltado semi", duration: "", price: "45 €" },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Cejas y Pestañas",
+      icon: <Hand className="w-6 h-6" />,
+      groups: [
+        {
+          title: "Cejas y Pestañas",
+          items: [
+            { name: "Repaso depilación cejas", duration: "", price: "10 €" },
+            { name: "Definición de cejas", duration: "", price: "15 €" },
+            { name: "Tinte cejas", duration: "", price: "6 €" },
+            { name: "Lifting de pestañas", duration: "", price: "40 €" },
+            { name: "Laminado de cejas", duration: "", price: "45 €" },
+            { name: "Microblading cejas", duration: "", price: "200 €" },
+          ],
+        },
+        {
+          title: "Extensiones de Pestañas",
+          items: [
+            { name: "CLÁSICAS (primera puesta)", duration: "1 h 30 min", price: "55 €" },
+            { name: "HIBRIDAS (primera puesta)", duration: "1 h 30 min", price: "60 €" },
+            { name: "VOLUMEN (primera puesta)", duration: "1 h 30 min", price: "65 €" },
+            { name: "RELLENO CLÁSICAS", duration: "1 h", price: "40 €" },
+            { name: "RELLENO HÍBRIDAS", duration: "1 h", price: "45 €" },
+            { name: "RELLENO VOLUMEN", duration: "1 h", price: "50 €" },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Depilación Cera",
       icon: <Scissors className="w-6 h-6" />,
       groups: [
         {
-          title: "SPA Capilar",
+          title: "Mujer",
           items: [
-            { name: "Essential Women", duration: "1 h 30 min", price: "120 €" },
-            { name: "Detox Men", duration: "1 h", price: "100 €" },
+            { name: "Nariz", duration: "", price: "3 €" },
+            { name: "Labio superior", duration: "", price: "3 €" },
+            { name: "Mentón", duration: "", price: "5 €" },
+            { name: "Axilas", duration: "", price: "8 €" },
+            { name: "Brazos", duration: "", price: "10 €" },
+            { name: "Línea alba", duration: "", price: "5 €" },
+            { name: "Ingles brasileñas", duration: "", price: "15 €" },
+            { name: "Pubis completo", duration: "", price: "20 €" },
+            { name: "Glúteos", duration: "", price: "10 €" },
+            { name: "Interglúteo", duration: "", price: "10 €" },
+            { name: "Medias piernas", duration: "", price: "15 €" },
+            { name: "Piernas enteras", duration: "", price: "20 €" },
+          ],
+        },
+        {
+          title: "Hombre",
+          items: [
+            { name: "Nariz u orejas", duration: "", price: "3 €" },
+            { name: "Axilas", duration: "", price: "10 €" },
+            { name: "Brazos", duration: "", price: "15 €" },
+            { name: "Hombros", duration: "", price: "8 €" },
+            { name: "Espalda", duration: "", price: "20 €" },
+            { name: "Tórax y abdomen", duration: "", price: "25 €" },
+            { name: "Glúteos", duration: "", price: "12 €" },
+            { name: "Medias piernas", duration: "", price: "17 €" },
+            { name: "Piernas enteras", duration: "", price: "22 €" },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Láser Diodo Trionda",
+      icon: <Eye className="w-6 h-6" />,
+      groups: [
+        {
+          title: "ZONA XS",
+          items: [
+            { name: "Labio superior · Patillas · Entrecejo · Mentón · Pómulos · Línea alba", duration: "", price: "10 €" },
+          ],
+        },
+        {
+          title: "ZONA S",
+          items: [
+            { name: "Axilas · Hombros · Ingles simples · Interglúteo · Nuca · Lumbares", duration: "", price: "20 €" },
+          ],
+        },
+        {
+          title: "ZONA M",
+          items: [
+            { name: "Medios brazos · Pubis completo", duration: "", price: "35 €" },
+          ],
+        },
+        {
+          title: "ZONA L",
+          items: [
+            { name: "Brazos completos · Espalda · Pecho · Medias piernas", duration: "", price: "45 €" },
+          ],
+        },
+        {
+          title: "ZONA XL",
+          items: [
+            { name: "Piernas completas", duration: "", price: "60 €" },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Tratamientos Faciales",
+      icon: <Eye className="w-6 h-6" />,
+      groups: [
+        {
+          title: "Tratamientos Faciales",
+          items: [
+            { name: "Higiene profunda", duration: "", price: "60 €" },
+            { name: "Tratamiento ácidos (Sesión)", duration: "", price: "60 €" },
+            { name: "Tratamiento ácidos (Bono 4 sesiones)", duration: "", price: "200 €" },
+            { name: "Tratamiento efecto flash", duration: "", price: "60 €" },
+            { name: "Radiofrecuencia facial (Sesión)", duration: "", price: "60 €" },
+            { name: "Radiofrecuencia facial (Bono 4 sesiones)", duration: "", price: "200 €" },
+            { name: "Dermapen (diagnóstico previo)", duration: "", price: "Desde 60 €" },
+            { name: "Maquillaje día / noche", duration: "", price: "50 €" },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Tratamientos Corporales",
+      icon: <Heart className="w-6 h-6" />,
+      groups: [
+        {
+          title: "Tratamientos Corporales",
+          items: [
+            { name: "Limpieza de espalda", duration: "", price: "50 €" },
+            { name: "Masaje relajante", duration: "45 min", price: "50 €" },
+            { name: "Maderoterapia", duration: "30 min", price: "45 €" },
+            { name: "Tratamiento detox", duration: "90 min", price: "80 €" },
+            { name: "Sculpt therapy (Sesión)", duration: "30 min", price: "30 €" },
+            { name: "Sculpt therapy (Bono 6 sesiones)", duration: "", price: "150 €" },
+            { name: "Presoterapia (Sesión)", duration: "30 min", price: "25 €" },
+            { name: "Presoterapia (Bono 6 sesiones)", duration: "", price: "120 €" },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Combinaciones Corporales",
+      icon: <Heart className="w-6 h-6" />,
+      groups: [
+        {
+          title: "Combinaciones Corporales",
+          items: [
+            {
+              name: "FUSIÓN CORPORAL: MADEROTERAPIA + SCULPT + PRESO (Sesión)",
+              duration: "90 min",
+              price: "100 €",
+            },
+            {
+              name: "FUSIÓN CORPORAL: MADEROTERAPIA + SCULPT + PRESO (Bono 4 sesiones)",
+              duration: "",
+              price: "360 €",
+            },
+            {
+              name: "MADEROTERAPIA + PRESO (Sesión)",
+              duration: "60 min",
+              price: "65 €",
+            },
+            {
+              name: "MADEROTERAPIA + PRESO (Bono 4 sesiones)",
+              duration: "",
+              price: "220 €",
+            },
+            {
+              name: "MADEROTERAPIA + SCULPT THERAPY (Sesión)",
+              duration: "60 min",
+              price: "70 €",
+            },
+            {
+              name: "MADEROTERAPIA + SCULPT THERAPY (Bono 4 sesiones)",
+              duration: "",
+              price: "240 €",
+            },
+            {
+              name: "SCULPT THERAPY + PRESO (Sesión)",
+              duration: "60 min",
+              price: "50 €",
+            },
+            {
+              name: "SCULPT THERAPY + PRESO (Bono 4 sesiones)",
+              duration: "",
+              price: "160 €",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Peluquería",
+      icon: <Scissors className="w-6 h-6" />,
+      groups: [
+        {
+          title: "Spa capilar",
+          items: [
+            { name: "Essential women", duration: "", price: "120 €" },
+            { name: "Detox men", duration: "", price: "100 €" },
           ],
         },
         {
           title: "Mechas",
           items: [
-            { name: "Balayage (desde)", duration: "2 h", price: "70 €" },
-            { name: "Babylights (desde)", duration: "2 h", price: "80 €" },
-            { name: "Melting (desde)", duration: "2 h", price: "85 €" },
-            { name: "Nordic Blonde (desde)", duration: "2 h", price: "90 €" },
-            { name: "Punto de Luz (desde)", duration: "2 h", price: "35 €" },
+            { name: "Balayage", duration: "", price: "Desde 70 €" },
+            { name: "Punto de luz", duration: "", price: "Desde 35 €" },
+            { name: "Nordic blonde", duration: "", price: "Desde 90 €" },
+            { name: "Corrección de color (diagnóstico previo)", duration: "", price: "diagnóstico previo" },
+            { name: "Babylights", duration: "", price: "Desde 80 €" },
+            { name: "Melting", duration: "", price: "Desde 85 €" },
           ],
         },
         {
           title: "Color",
           items: [
-            { name: "Tonalidad Base (desde)", duration: "1 h 30 min", price: "40 €" },
-            { name: "Tonalidad Completa (desde)", duration: "1 h 15 min", price: "60 €" },
-            { name: "Gloss Color (Matiz) (desde)", duration: "30 min", price: "39 €" },
-            { name: "Asesoramiento Color", duration: "15 min", price: "0,01 €" },
+            { name: "Tonalidad completa", duration: "", price: "Desde 60 €" },
+            { name: "Tonalidad en la base", duration: "", price: "Desde 40 €" },
+            { name: "Matiz", duration: "", price: "39 €" },
           ],
         },
         {
-          title: "Combinados",
+          title: "Corte",
           items: [
-            { name: "Tonalidad Base + Matiz + Secado (Pelo corto)", duration: "2 h 30 min", price: "99 €" },
-            { name: "Tonalidad Base + Matiz + Secado (Pelo medio)", duration: "2 h 45 min", price: "103 €" },
-            { name: "Tonalidad Base + Matiz + Secado (Pelo largo)", duration: "3 h", price: "107 €" },
-
-            { name: "Tonalidad Base + Corte + Secado (Pelo corto)", duration: "1 h 45 min", price: "80 €" },
-            { name: "Tonalidad Base + Corte + Secado (Pelo medio)", duration: "2 h", price: "84 €" },
-            { name: "Tonalidad Base + Corte + Secado (Pelo largo)", duration: "2 h 15 min", price: "88 €" },
-
-            { name: "Tonalidad Completa + Corte + Secado (Pelo corto)", duration: "1 h 45 min", price: "100 €" },
-            { name: "Tonalidad Completa + Corte + Secado (Pelo medio)", duration: "2 h", price: "104 €" },
-            { name: "Tonalidad Completa + Corte + Secado (Pelo largo)", duration: "2 h 15 min", price: "108 €" },
-
-            { name: "Tonalidad Completa + Secado (Pelo corto)", duration: "1 h 30 min", price: "80 €" },
-            { name: "Tonalidad Completa + Secado (Pelo medio)", duration: "1 h 45 min", price: "84 €" },
-            { name: "Tonalidad Completa + Secado (Pelo largo)", duration: "2 h", price: "88 €" },
-
-            { name: "Mechas + Matiz + Secado (Pelo corto)", duration: "4 h 30 min", price: "129 €" },
-            { name: "Mechas + Matiz + Secado (Pelo medio)", duration: "4 h 45 min", price: "133 €" },
-            { name: "Mechas + Matiz + Secado (Pelo largo)", duration: "5 h", price: "137 €" },
-
-            { name: "Mechas + Matiz + Corte + Secado (Pelo corto)", duration: "4 h 45 min", price: "149 €" },
-            { name: "Mechas + Matiz + Corte + Secado (Pelo medio)", duration: "5 h", price: "153 €" },
-            { name: "Mechas + Matiz + Corte + Secado (Pelo largo)", duration: "5 h 15 min", price: "157 €" },
-
-            { name: "Matiz + Secado (Pelo corto)", duration: "1 h 30 min", price: "59 €" },
-            { name: "Matiz + Secado (Pelo medio)", duration: "1 h 45 min", price: "63 €" },
-            { name: "Matiz + Secado (Pelo largo)", duration: "2 h", price: "67 €" },
-
-            { name: "Matiz + Corte + Secado (Pelo corto)", duration: "1 h 45 min", price: "79 €" },
-            { name: "Matiz + Corte + Secado (Pelo medio)", duration: "2 h", price: "83 €" },
-            { name: "Matiz + Corte + Secado (Pelo largo)", duration: "2 h 15 min", price: "87 €" },
+            { name: "Corte", duration: "", price: "Desde 20 €" },
           ],
         },
         {
           title: "Secado",
           items: [
-            { name: "Lavar + Secar (Pelo corto)", duration: "30 min", price: "20 €" },
-            { name: "Lavar + Secar (Pelo medio)", duration: "45 min", price: "24 €" },
-            { name: "Lavar + Secar (Pelo largo)", duration: "1 h", price: "28 €" },
-            { name: "Lavar + Ondas (Pelo corto)", duration: "40 min", price: "22 €" },
-            { name: "Lavar + Ondas (Pelo medio)", duration: "55 min", price: "26 €" },
-            { name: "Lavar + Ondas (Pelo largo)", duration: "1 h 10 min", price: "30 €" },
+            { name: "Corto", duration: "", price: "20 €" },
+            { name: "Medio", duration: "", price: "24 €" },
+            { name: "Largo", duration: "", price: "28 €" },
           ],
         },
         {
-          title: "Corte y Secado",
+          title: "Tratamientos capilares",
           items: [
-            { name: "Corte + Secado a Mano (Pelo corto)", duration: "45 min", price: "40 €" },
-            { name: "Corte + Secado a Mano (Pelo medio)", duration: "1 h", price: "44 €" },
-            { name: "Corte + Secado a Mano (Pelo largo)", duration: "1 h 15 min", price: "48 €" },
-            { name: "Corte + Secado al Aire (Pelo corto)", duration: "20 min", price: "24 €" },
-            { name: "Corte + Secado al Aire (Pelo medio)", duration: "30 min", price: "26 €" },
-            { name: "Corte + Secado al Aire (Pelo largo)", duration: "30 min", price: "28 €" },
-            { name: "Diseño de Corte (desde)", duration: "1 h 15 min", price: "45 €" },
-            { name: "Corte Flequillo", duration: "10 min", price: "10 €" },
-          ],
-        },
-        {
-          title: "Tratamientos Capilares",
-          items: [
-            { name: "Balancing + Secado (desde)", duration: "1 h 30 min", price: "60 €" },
-            { name: "Purifying + Secado (desde)", duration: "1 h 30 min", price: "60 €" },
-            { name: "Vitalizing + Secado (desde)", duration: "1 h 30 min", price: "60 €" },
-            { name: "Invigorating + Secado (desde)", duration: "1 h 30 min", price: "60 €" },
-            { name: "Sensitive + Secado (desde)", duration: "1 h 30 min", price: "60 €" },
-            { name: "Mud Therapy + Secado (desde)", duration: "1 h 30 min", price: "60 €" },
-            { name: "Hidracore + Secado (desde)", duration: "1 h 30 min", price: "50 €" },
-            { name: "Bioregenerante + Secado (desde)", duration: "1 h 30 min", price: "45 €" },
-          ],
-        },
-        {
-          title: "Tratamiento K18 + Secado",
-          items: [
-            { name: "Pelo corto", duration: "30 min", price: "35 €" },
-            { name: "Pelo medio", duration: "40 min", price: "45 €" },
-            { name: "Pelo largo", duration: "55 min", price: "55 €" },
-          ],
-        },
-        {
-          title: "Antifrizz / Permanente / Alisado",
-          items: [
-            { name: "Trat. Capilar Antifrizz Complex (Pelo corto)", duration: "1 h", price: "70 €" },
-            { name: "Trat. Capilar Antifrizz Complex (Pelo medio)", duration: "1 h 15 min", price: "80 €" },
-            { name: "Trat. Capilar Antifrizz Complex (Pelo largo)", duration: "1 h 30 min", price: "90 €" },
-            { name: "Permanente Rizada (desde)", duration: "1 h 30 min", price: "70 €" },
-            { name: "Alisado Orgánico (precio gramo)", duration: "3 h", price: "1,50 €/g" },
-          ],
-        },
-        {
-          title: "Tratamiento K-18 (secado al aire)",
-          items: [
-            { name: "Pelo corto", duration: "15 min", price: "20 €" },
-            { name: "Pelo medio", duration: "15 min", price: "25 €" },
-            { name: "Pelo largo", duration: "15 min", price: "30 €" },
-          ],
-        },
-        {
-          title: "Barber Ritual",
-          items: [
-            { name: "Corte", duration: "30 min", price: "20 €" },
-            { name: "Rapado", duration: "30 min", price: "15 €" },
-            { name: "Barba", duration: "30 min", price: "15 €" },
-            { name: "Corte + Barba", duration: "45 min", price: "28 €" },
-            { name: "Rapado + Barba", duration: "45 min", price: "25 €" },
+            {
+              name: "Reparación, hidratación, nutrición, cuero cabelludo",
+              duration: "",
+              price: "Desde 25 €",
+            },
+            { name: "Alisado orgánico", duration: "", price: "1,50 €/gr" },
+            { name: "Antifrezz", duration: "", price: "Desde 70 €" },
           ],
         },
         {
           title: "Eventos",
           items: [
-            { name: "Recogido Invitada", duration: "1 h", price: "45 €" },
-            { name: "Peinado Fallera", duration: "1 h", price: "40 €" },
-            { name: "Recogido Novia (asesoramiento previo)", duration: "1 h 30 min", price: "0,01 €" },
-            { name: "Arreglo Trenzas de Fallera", duration: "5 min", price: "15 €" },
+            { name: "Recogido de invitada", duration: "", price: "45 €" },
+            { name: "Peinado de fallera", duration: "", price: "40 €" },
+            { name: "Recogido de novia", duration: "", price: "Consultar en el salón" },
           ],
         },
-      ],
-    },
-    {
-      title: "Uñas",
-      icon: <Sparkles className="w-6 h-6" />,
-      groups: [
         {
-          title: "Servicios de Uñas",
+          title: "Barber Ritual",
           items: [
-            { name: "Manicura Clásica", duration: "45 min", price: "25 €" },
-            { name: "Manicura Semipermanente", duration: "60 min", price: "35 €" },
-            { name: "Extensiones de Uñas", duration: "90 min", price: "Desde 50 €" },
-            { name: "Pedicura Spa", duration: "60 min", price: "40 €" },
-          ],
-        },
-      ],
-    },
-    {
-      title: "Depilación",
-      icon: <Hand className="w-6 h-6" />,
-      groups: [
-        {
-          title: "Servicios de Depilación",
-          items: [
-            { name: "Cejas y Pestañas", duration: "20 min", price: "15 €" },
-            { name: "Depilación con Cera", duration: "30-60 min", price: "Desde 20 €" },
-            { name: "Depilación Láser Diodo", duration: "Variable", price: "Consultar" },
-          ],
-        },
-      ],
-    },
-    {
-      title: "Facial",
-      icon: <Eye className="w-6 h-6" />,
-      groups: [
-        {
-          title: "Servicios de Facial",
-          items: [
-            { name: "Tratamiento Facial Básico", duration: "60 min", price: "50 €" },
-            { name: "Tratamiento Facial Premium", duration: "90 min", price: "85 €" },
-            { name: "Extensión de Pestañas", duration: "120 min", price: "70 €" },
-            { name: "Maquillaje Profesional", duration: "60 min", price: "45 €" },
-          ],
-        },
-      ],
-    },
-    {
-      title: "Masaje & Cuerpo",
-      icon: <Heart className="w-6 h-6" />,
-      groups: [
-        {
-          title: "Servicios de Masaje y Cuerpo",
-          items: [
-            { name: "Masaje Relajante", duration: "60 min", price: "55 €" },
-            { name: "Maderoterapia", duration: "60 min", price: "60 €" },
-            { name: "Presoterapia", duration: "45 min", price: "40 €" },
-            { name: "Sculpt Therapy", duration: "60 min", price: "70 €" },
+            { name: "Corte", duration: "", price: "20 €" },
+            { name: "Rapado", duration: "", price: "15 €" },
+            { name: "Barba", duration: "", price: "15 €" },
+            { name: "Corte + barba", duration: "", price: "28 €" },
+            { name: "Rapado + barba", duration: "", price: "25 €" },
           ],
         },
       ],
